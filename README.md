@@ -1,32 +1,41 @@
-# 🏠 House Price Prediction using Machine Learning
+# 🌸 Iris Flower Classification using Machine Learning
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge\&logo=python)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange?style=for-the-badge)
-![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+![Classification](https://img.shields.io/badge/Task-Classification-success?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
 
 # 📌 Project Overview
 
-This project predicts house prices using Machine Learning techniques by analyzing property characteristics such as area, number of bedrooms, bathrooms, floors, year built, location, condition, and garage availability.
+The **Iris Flower Classification** project is a supervised Machine Learning application that classifies Iris flowers into one of three species based on their physical characteristics.
 
-The project demonstrates an end-to-end Machine Learning workflow, including:
+The project demonstrates the complete classification workflow, including:
 
-* Data Collection
-* Exploratory Data Analysis (EDA)
-* Data Preprocessing
-* Feature Engineering
-* Pipeline Construction
-* Model Selection
-* Cross Validation
-* Hyperparameter Tuning
+* Data Loading
+* Data Visualization
+* Feature Selection
+* Train-Test Split
+* Model Training
 * Model Evaluation
-* Prediction System
+* Species Prediction
+
+The famous **Iris Dataset** is widely used as an introductory dataset for Machine Learning classification problems.
 
 ---
 
 # 🎯 Objective
 
-Build a Machine Learning model capable of estimating house prices based on various house attributes and compare multiple regression algorithms to identify the most suitable approach.
+To build an accurate Machine Learning model capable of identifying the species of an Iris flower using four flower measurements.
+
+---
+
+# 🌼 Iris Species
+
+The model predicts one of the following classes:
+
+* 🌸 Iris-setosa
+* 🌺 Iris-versicolor
+* 🌷 Iris-virginica
 
 ---
 
@@ -34,23 +43,28 @@ Build a Machine Learning model capable of estimating house prices based on vario
 
 ### Dataset Size
 
-* Records: **2,000 Houses**
-* Features: **10 Columns**
+* Total Samples: **150**
+* Features: **4**
+* Target Classes: **3**
 
-### Features
+### Features Used
 
-| Feature   | Description                      |
-| --------- | -------------------------------- |
-| Id        | Unique House Identifier          |
-| Area      | House Area                       |
-| Bedrooms  | Number of Bedrooms               |
-| Bathrooms | Number of Bathrooms              |
-| Floors    | Number of Floors                 |
-| YearBuilt | Construction Year                |
-| Location  | Downtown, Urban, Suburban, Rural |
-| Condition | Excellent, Good, Fair, Poor      |
-| Garage    | Garage Availability              |
-| Price     | Target Variable                  |
+| Feature      | Description          |
+| ------------ | -------------------- |
+| Sepal Length | Length of Sepal (cm) |
+| Sepal Width  | Width of Sepal (cm)  |
+| Petal Length | Length of Petal (cm) |
+| Petal Width  | Width of Petal (cm)  |
+
+### Target Variable
+
+```text
+Class_labels
+
+• Iris-setosa
+• Iris-versicolor
+• Iris-virginica
+```
 
 ---
 
@@ -79,17 +93,16 @@ Build a Machine Learning model capable of estimating house prices based on vario
 # 📂 Project Structure
 
 ```text
-House_Price_Prediction/
+Iris_Flower_Classification/
 │
-├── House Price Prediction Dataset.csv
-├── Project2_House_Price_Prediction.ipynb
+├── IRIS.csv
+├── Project3_Iris_Flower_Classification.ipynb
 ├── README.md
 │
 └── outputs/
-    ├── correlation_heatmap.png
-    ├── distributions.png
-    ├── boxplots.png
-    └── residual_plots.png
+    ├── pairplot.png
+    ├── predictions.png
+    └── classification_report.png
 ```
 
 ---
@@ -97,190 +110,113 @@ House_Price_Prediction/
 # 🔄 Machine Learning Workflow
 
 ```text
-Data Collection
+Dataset Loading
         ↓
-Data Cleaning
+Data Visualization
         ↓
-Exploratory Data Analysis
-        ↓
-Preprocessing Pipeline
+Feature Selection
         ↓
 Train-Test Split
         ↓
-Model Selection
+Model Training
         ↓
-Cross Validation
+Model Evaluation
         ↓
-Hyperparameter Tuning
-        ↓
-Final Model Training
-        ↓
-Prediction System
+Species Prediction
 ```
 
 ---
 
-# 📈 Exploratory Data Analysis (EDA)
+# 📈 Exploratory Data Analysis
 
-The following analyses were performed:
+The project performs:
 
-* Dataset Information
-* Missing Value Analysis
-* Duplicate Detection
-* Descriptive Statistics
-* Distribution Analysis
-* Correlation Heatmap
-* Outlier Detection
-* Categorical Feature Distribution
-* Target Variable Distribution
+* Dataset Summary
+* Statistical Analysis
+* Pair Plot Visualization
+* Feature Relationship Analysis
+
+The **Seaborn PairPlot** helps visualize how different flower species are separated based on feature combinations.
 
 ---
 
-# ⚙️ Data Preprocessing
+# 🤖 Machine Learning Models
 
-## Numerical Features
+Three classification algorithms were implemented and compared.
 
-* Median Imputation
-* Standard Scaling
+## 1️⃣ Support Vector Machine (SVM)
 
-## Categorical Features
+* Algorithm: Support Vector Classifier (SVC)
 
-* Most Frequent Imputation
-* One-Hot Encoding
-
-## Preprocessing Pipeline
-
-* SimpleImputer
-* StandardScaler
-* OneHotEncoder
-* ColumnTransformer
-* Pipeline API
-
----
-
-# 🤖 Models Implemented
-
-The following regression models were evaluated:
-
-### Linear Regression
-
-### Ridge Regression
-
-### Lasso Regression
-
-### Random Forest Regressor
-
-### HistGradientBoostingRegressor
-
----
-
-# 🔍 Cross Validation
-
-The project uses:
-
-* 5-Fold Cross Validation
-* RMSE Evaluation
-* MAE Evaluation
-* R² Score Evaluation
-
----
-
-# ⚡ Hyperparameter Tuning
-
-GridSearchCV was used to optimize the HistGradientBoostingRegressor.
-
-### Tuned Parameters
-
-* Learning Rate
-* Maximum Depth
-* Maximum Leaf Nodes
-* Minimum Samples Leaf
-* L2 Regularization
-
----
-
-# 📊 Model Performance
-
-## Baseline Linear Regression
-
-| Metric   | Value      |
-| -------- | ---------- |
-| RMSE     | 274,246.37 |
-| MAE      | 242,867.45 |
-| R² Score | 0.010      |
-
----
-
-## Final HistGradientBoosting Model
-
-### Training Performance
-
-| Metric   | Value      |
-| -------- | ---------- |
-| RMSE     | 110,586.32 |
-| MAE      | 90,594.70  |
-| R² Score | 0.839      |
-
-### Testing Performance
-
-| Metric   | Value      |
-| -------- | ---------- |
-| RMSE     | 308,911.22 |
-| MAE      | 259,971.10 |
-| R² Score | -0.227     |
-
----
-
-# 🔮 Predictive System
-
-Example Input:
-
-```python
-predict_house_price(
-    area=2500,
-    bedrooms=3,
-    bathrooms=2,
-    floors=2,
-    year_built=2015,
-    location="Downtown",
-    condition="Excellent",
-    garage="Yes"
-)
-```
-
-### Predicted House Price
+### Accuracy
 
 ```text
-₹492,558.03
+96.67%
 ```
 
 ---
 
-# 📊 Visualizations Included
+## 2️⃣ Logistic Regression
 
-* Categorical Count Plots
-* Target Distribution Histogram
-* Numerical Feature Distributions
-* Boxplots for Outlier Detection
-* Correlation Heatmap
-* Residual Plot
-* Residual Distribution Plot
+### Accuracy
+
+```text
+93.33%
+```
 
 ---
 
-# 💡 Key Insights
+## 3️⃣ Decision Tree Classifier
 
-✔ Dataset contains both numerical and categorical features.
+The Decision Tree model was trained for comparison with the other classifiers.
 
-✔ No missing values or duplicate records were found.
+---
 
-✔ Data preprocessing pipelines significantly simplified model training.
+# 📊 Model Comparison
 
-✔ Multiple regression models were evaluated and compared.
+| Model                        | Accuracy   |
+| ---------------------------- | ---------- |
+| Support Vector Machine (SVM) | **96.67%** |
+| Logistic Regression          | **93.33%** |
+| Decision Tree Classifier     | **96.67%** |
 
-✔ HistGradientBoostingRegressor was selected after hyperparameter tuning.
+---
 
-✔ The project demonstrates a complete Machine Learning workflow from data preprocessing to prediction.
+# 📋 Classification Report
+
+The project evaluates the classification performance using:
+
+* Precision
+* Recall
+* F1-Score
+* Accuracy
+
+The Logistic Regression model achieved:
+
+* Overall Accuracy: **93%**
+* Strong performance across all three Iris species.
+
+---
+
+# 🌸 Sample Prediction
+
+Example Input
+
+```python
+X_new = np.array([
+    [3, 2, 1, 0.2],
+    [4.9, 2.2, 3.8, 1.1],
+    [5.3, 2.5, 4.6, 1.9]
+])
+```
+
+### Predicted Species
+
+```text
+Iris-setosa
+Iris-versicolor
+Iris-versicolor
+```
 
 ---
 
@@ -289,13 +225,13 @@ predict_house_price(
 ## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/House-Price-Prediction.git
+git clone https://github.com/yourusername/Iris-Flower-Classification.git
 ```
 
 ## Navigate to Project
 
 ```bash
-cd House-Price-Prediction
+cd Iris-Flower-Classification
 ```
 
 ## Install Dependencies
@@ -304,7 +240,7 @@ cd House-Price-Prediction
 pip install numpy pandas matplotlib seaborn scikit-learn
 ```
 
-## Launch Notebook
+## Run Notebook
 
 ```bash
 jupyter notebook
@@ -313,36 +249,59 @@ jupyter notebook
 Open:
 
 ```text
-Project2_House_Price_Prediction.ipynb
+Project3_Iris_Flower_Classification.ipynb
 ```
+
+---
+
+# 📊 Visualizations Included
+
+* Pair Plot
+* Dataset Statistics
+* Feature Distribution
+* Model Predictions
+* Classification Report
+
+---
+
+# 💡 Key Insights
+
+✔ The Iris dataset contains three well-defined flower species.
+
+✔ Petal length and petal width are the most discriminative features.
+
+✔ Support Vector Machine achieved the highest classification accuracy of **96.67%**.
+
+✔ Logistic Regression also performed strongly with **93.33%** accuracy.
+
+✔ The project demonstrates a complete supervised classification workflow.
 
 ---
 
 # 🎓 Learning Outcomes
 
-This project helped in understanding:
+Through this project, I gained practical experience in:
 
-* Data Preprocessing Pipelines
-* Exploratory Data Analysis
-* Regression Algorithms
-* Model Evaluation Metrics
-* Cross Validation
-* Hyperparameter Tuning
-* Scikit-Learn Pipelines
-* Predictive Systems Development
+* Supervised Machine Learning
+* Data Visualization
+* Feature Extraction
+* Classification Algorithms
+* Model Evaluation
+* Species Prediction
+* Scikit-Learn Workflow
 
 ---
 
 # 🔮 Future Enhancements
 
-* XGBoost Regressor
-* LightGBM Integration
-* Feature Selection Techniques
-* Advanced Ensemble Models
-* Model Deployment using Flask
-* Streamlit Dashboard
-* REST API Integration
-* Real-Time House Price Prediction System
+* Hyperparameter Tuning
+* Cross Validation
+* Confusion Matrix Visualization
+* ROC Curve Analysis
+* GridSearchCV Optimization
+* Streamlit Web Application
+* Flask API Deployment
+* Interactive Prediction Dashboard
 
 ---
 
@@ -365,5 +324,4 @@ This project helped in understanding:
 
 If you found this project useful, please consider giving it a ⭐ on GitHub.
 
-### 🏠 Predicting Property Prices Through Data and Machine Learning 🚀
-
+### 🌸 Exploring Machine Learning Through Intelligent Flower Classification 🚀
